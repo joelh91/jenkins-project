@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        SERVER_CREDS = credentials('server-creds')
+    }
     
 
     stages {
@@ -7,6 +10,9 @@ pipeline {
         
         stage('Setup') {
             steps {
+                echo "my creds ${SERVER_CREDS}"
+                echo "username ${SERVER_CREDS_USR}"
+                echo "password ${SERVER_CREDS_PSW}"
                 sh "pip install -r requirements.txt"
                   
             }
