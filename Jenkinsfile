@@ -25,6 +25,17 @@ pipeline {
                 echo "commit ${env.GIT_COMMIT}"
             }
         }
+
+        stage ('deploy') {
+            input {
+                message "do you want us to proceed further"
+                ok "yes"
+            }
+            steps{
+                echo " running deployment"
+            }
+            
+        }
        
     }
 }
