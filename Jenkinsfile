@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "pytest"
-                echo "commit is ${env.GIT_ COMMIT}"
+                echo "commit ${env.GIT_COMMIT}"
             }
         }
        
