@@ -1,10 +1,6 @@
 pipeline {
     agent any
-    environment {
-        DB_HOST = '172.168.12.1'
-        USERNAME = 'user1'
-        PASSWORD = 'password123'
-    }
+    
 
     stages {
 
@@ -18,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "pytest"
-                echo "the database username is ${USERNAME} and the password is ${PASSWORD}"
+                echo "commit is ${env.GIT_ COMMIT}"
             }
         }
        
