@@ -7,8 +7,8 @@ pipeline {
         
         stage('Setup') {
             steps {
-                withCredentials([usernamePassword(credentialsID: 'server-c reds',
-                usernameVariables: "myuser", passwordVariables: "mypassword")]) {
+                withCredentials([usernamePassword(credentialsId: 'server-c reds',
+                usernameVariable: "myuser", passwordVariable: "mypassword")]) {
                     sh '''
                     echo ${myuser}
                     echo ${mypassword}
